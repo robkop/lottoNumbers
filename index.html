@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Polish Lotto game numbers</title>
+
+
+<style>
+body{
+  font-size: 100px;
+}
+#text{
+  display: none;
+}
+.btn{
+  height: 200px;
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  font-size: 100px;
+  border-radius: 10px;
+}
+#reset{
+  background-color: red;
+}
+</style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="buttons">
+      <button id="btn" class="btn">Draw number</button><button id="reset" class="btn">Reset</button>
+    </div>
+    <div id="results"></div>
+    <div id="text">I hope that you will get $1000000!</div>
+  </div>
+  <script>
+    var btn = document.getElementById('btn');
+    var results = document.getElementById('results');
+    var text = document.getElementById('text');
+    var reset = document.getElementById('reset');
+    var randomNumbersArr = new Array;
+    btn.addEventListener('click', drawNumber);
+    reset.addEventListener('click', resetApp);
+    function resetApp(){
+      randomNumbersArr = [];
+      results.innerHTML = "";
+      text.style.display = "none";
+    }
+    function drawNumber(){
+      if (randomNumbersArr.length == 6) {
+        text.style.display = "block";
+      } else {
+        var x1 = Math.floor((Math.random() * 49) + 1);
+          if (x1.randomNumbersArr == Array){
+            drawNumber();
+          } else{
+            results.innerHTML += x1 + ', ';
+            randomNumbersArr.push(x1);
+          }
+      }
+    }
+  </script>
+</body>
+</html>
